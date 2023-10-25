@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form and input fields</title>
+</head>
+<body>
+
+    <h1>Inserisci i tuoi dati e generi musicali preferiti per effettuare la registrazione!</h1>
+
+    <form id="registration-form" onsubmit="event.preventDefault(); showAlert('REGISTRAZIONE INVIATA');">
+
+        <div>
+            <input type="text" placeholder="Name">
+        </div>
+        <div>
+            <input type="text" placeholder="Surname">
+        </div>
+        <div>
+            <input type="email" placeholder="email@">
+        </div>
+        <input type="password" placeholder="password">
+        <input type="date" placeholder="Date">
+        <div>
+            <input type="number" placeholder="Number">
+        </div>
+        <div>
+            Pop <input type="checkbox" placeholder="Genere 1"> 
+            Rock <input type="checkbox" placeholder="Genere 2">
+            Metal <input type="checkbox" placeholder="Genere 3">
+        </div>
+        <div>
+            Classica <input type="checkbox" placeholder="Genere 4">
+            Folk <input type="checkbox" placeholder="Genere 5">
+            Indie <input type="checkbox" placeholder="Genere 6">
+        </div> 
+        <div>
+            Accettazione termini e condizioni <input type="radio" placeholder="Accettazione termini e condizioni">
+        </div>
+        <button type="submit">INVIA REGISTRAZIONE</button>
+    </form>
+
+    <div>
+        <button onclick="showAlert('LOGIN EFFETTUATO')">LOGIN</button>
+    </div>
+
+    <script>
+        function showAlert(message) {
+            alert(message);
+        }
+    </script>
+</body>
+</html>
