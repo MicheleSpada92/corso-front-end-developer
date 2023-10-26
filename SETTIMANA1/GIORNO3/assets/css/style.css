@@ -1,0 +1,32 @@
+
+
+h1 { color: rgb(72, 0, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+
+
+#title {
+    text-align: center; /* Allinea il testo al centro orizzontalmente */
+    vertical-align: top; /* Allinea il testo in alto verticalmente */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#title {
+    font-family: 'Roboto', sans-serif;                  /* APPLICA STILE DI TESTO CON ROBOTO */
+}
+
+
+
+#myImage {
+    width: 20%; /* Puoi regolare il valore percentuale secondo le tue preferenze */
+}
+
+#myImage {
+    display: block; /* Per garantire che il margin: auto funzioni */
+    margin: 0 auto; /* Imposta i margini laterali su auto per centrare l'immagine */
+}
