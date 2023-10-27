@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" type="text/css" href="stylemobile.css">
     <style>
         /* Aggiungi stile per la linea di separazione */
@@ -21,6 +20,78 @@
         /* Aggiungi stile per la parola "pixbay" sottolineata */
         .pixbay {
             text-decoration: underline;
+        }
+
+        /* Stile di base per il corpo della pagina */
+        body {
+            background-color: white;
+            font-size: 1.2rem;
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.65;
+            color: #000;
+            text-align: center;
+        }
+
+        /* Stili per gli header */
+        #header {
+            background-color: black;
+            position: relative;
+            padding: 20px;
+        }
+
+        #header h1, #header p {
+            color: white;
+        }
+
+        /* Stili per i pulsanti */
+        button {
+            background-color: #f04c2f;
+            color: #fff;
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ff66009a;
+        }
+
+        /* Stili per il footer */
+        #footer {
+            background-color: #25a2c3;
+        }
+
+        /* Stili per il bordo delle schede */
+        .card {
+            border: 1px solid #dee1e3;
+        }
+
+        /* Stili per il testo nel footer */
+        footer {
+            background-color: #c8e7f0;
+            color: #fff;
+        }
+
+        /* Stili per i link nel footer */
+        footer a {
+            color: #c8e7f0;
+        }
+
+        /* Stili specifici per il logo */
+        #logo-container {
+            background-color: black;
+        }
+
+        #logo {
+            max-width: 80px;
+            max-height: 100px;
+            display: block;
+            margin: 0 auto;
+            padding: 10px;
         }
     </style>
     <title>Document</title>
@@ -43,7 +114,7 @@
             <p>Sono 30.000 in Italia le posizioni di developer scoperte, scegli quella che ti stimola di più.</p>
         </div>
         
-        <div class "content-group with-image">
+        <div class="content-group with-image">
             <h2>Lavora dove vuoi</h2>
             <p>Lavora da casa, in riva al mare o in montagna</p>
             <div class="image-container">
@@ -65,8 +136,9 @@
 
         <div class="content-group orange-background">
             <h2>Epicode garantisce</h2>
-            <p>3 mesi intensivi di corso che cambieranno radicalmente la tua vita.</p>
-            <p>Di Mario Rossi, CEO, Epicode</p>
+            <p>"3 mesi intensivi di corso che cambieranno radicalmente la tua vita"</p>
+            <h4>Mario Rossi</h4>
+            <p>CEO, Epicode</p>
         </div>
     </div>
     
@@ -75,13 +147,13 @@
         <h2>Il tuo PC</h2>
         <p>Se vuoi diventare developer è l’unico strumento di cui hai bisogno.</p>
     </div>
-
+    
     <div class="card">
         <img src="images/foto2.jpg" alt="Impara ora">
         <h2>Impara ora</h2>
         <p>Impara da chi diventerai tra qualche anno e diventa una rockstar come loro.</p>
     </div>
-
+    
     <div class="card">
         <img src="images/foto3.jpg" alt="Lavora subito">
         <h2>Lavora subito</h2>
@@ -101,12 +173,13 @@
             </div>
             <p class="contact-description no-link">info@epicode.school</p>
         </div>
-        <div class="contact-info">
+        <div class="contact-info address"> <!-- Aggiunta la classe "address" -->
             <div class="icon-box">
                 <i class="fas fa-map-marker-alt"></i>
             </div>
-            <p class="contact-description">Via Appia 1 - 00100 Roma (RM) </p>
+            <p class="contact-description">Via Appia 1 - 00100 Roma (RM)</p>
         </div>
+        
 
         <!-- Aggiungi la linea di separazione all'interno del footer -->
         <div class="separator"></div>

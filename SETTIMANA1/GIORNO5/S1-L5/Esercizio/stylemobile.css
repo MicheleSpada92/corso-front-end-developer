@@ -1,43 +1,47 @@
+/* Stile di base per il corpo della pagina */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    background-color: white;
+    font-size: 1.2rem;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.65;
+    color: #000;
     text-align: center;
 }
 
+/* Stili per gli header */
+#header {
+    background-color: black;
+    position: relative;
+    padding: 20px;
+}
+
+#header h1, #header p {
+    color: #25a2c3;
+}
+
+#header p {
+    color: black;
+}
+
+/* Stili per il logo */
 #logo-container {
-    padding: 20px 0;
     background-color: black;
 }
 
 #logo {
-    max-width: 100%;
-    height: auto;
+    max-width: 80px;
+    max-height: 100px;
     display: block;
     margin: 0 auto;
+    padding: 10px;
 }
 
-.card-with-background {
-    background-image: url('images/banner.jpg');
-    background-size: cover;
-    background-position: center center;
-    padding: 100px 0;
-    color: rgba(37, 162, 195, 255);
-}
-
-.grouped-card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 800px;
-    text-align: center;
-    display: inline-block;
-}
-
+/* Stili per i pulsanti */
 button {
-    background-color: rgba(255, 0, 0, 0.752);
-    color: white;
+    background-color: #f04c2f;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
     border: none;
     padding: 10px 20px;
     font-size: 18px;
@@ -49,16 +53,93 @@ button:hover {
     background-color: #ff66009a;
 }
 
-.card h2 {
+/* Stili per il footer */
+#footer {
+    background-color: #25a2c3;
+}
+
+/* Stili per il bordo delle schede */
+.card {
+    border: 1px solid #dee1e3;
+}
+
+/* Stili per il testo nel footer */
+footer {
+    background-color: #c8e7f0;
+    color: #fff;
+}
+
+/* Stili per i link nel footer */
+footer a {
+    color: #c8e7f0;
+}
+
+/* Stili specifici per il logo */
+#logo-container {
+    background-color: black;
+}
+
+#logo {
+    max-width: 80px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Stili per la linea di separazione */
+.separator {
+    border-top: 2px solid white;
+    margin: 20px 0;
+}
+
+/* Stili per il copyright */
+.copyright {
+    color: white;
+}
+
+/* Stili per la parola "pixbay" sottolineata */
+.pixbay {
+    text-decoration: underline;
+}
+
+/* Stili per le testimonianze */
+.testimonial {
+    background-color: #e22d0e;
+    color: #fff;
+}
+
+/* Stili per il banner con sfondo */
+.card-with-background {
+    background-image: url('images/banner.jpg');
+    background-size: cover;
+    background-position: center center;
+    padding: 100px 0;
     color: rgba(37, 162, 195, 255);
 }
 
-.card p {
+/* Stili per le schede raggruppate */
+.grouped-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+    display: inline-block;
+}
+
+.grouped-card h2 {
+    color: rgba(37, 162, 195, 255);
+}
+
+.grouped-card p {
     color: black;
 }
 
+/* Stili per le schede con sfondo arancione */
 .content-group.orange-background {
-    background-color: rgb(226,45,14,255); 
+    background-color: rgb(226, 45, 14, 255);
     color: white;
 }
 
@@ -67,6 +148,7 @@ button:hover {
     color: white;
 }
 
+/* Stili per le immagini nei contenitori */
 .image-container {
     display: flex;
     flex-direction: column;
@@ -80,6 +162,7 @@ button:hover {
     height: 300px;
 }
 
+/* Stili per la sezione dei contatti */
 .contact-section {
     background: rgba(37, 162, 195, 255);
     color: white;
@@ -87,6 +170,7 @@ button:hover {
     padding: 20px;
 }
 
+/* Stili per le informazioni di contatto */
 .contact-info {
     margin-bottom: 20px;
 }
@@ -100,11 +184,7 @@ button:hover {
     margin: 5px 0;
 }
 
-.contact-section img {
-    vertical-align: middle;
-}
-
-/* Aggiungi stile all'icon-box */
+/* Stile per l'icon-box */
 .icon-box {
     background-color: white;
     padding: 5px;
@@ -121,4 +201,12 @@ button:hover {
     color: white;
     font-size: 18px;
     vertical-align: middle;
+}
+
+
+
+/* Stili per le immagini nelle schede */
+.card img {
+    max-width: 100%;
+    height: auto;
 }
