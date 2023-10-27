@@ -58,7 +58,7 @@ button:hover {
 }
 
 .content-group.orange-background {
-    background-color: orange;
+    background-color: rgb(226,45,14,255); 
     color: white;
 }
 
@@ -116,6 +116,7 @@ button:hover {
 
 /* Stile per la descrizione dei contatti */
 .contact-description {
+    text-decoration: underline;
     display: inline;
     color: white;
     font-size: 18px;
