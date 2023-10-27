@@ -103,3 +103,21 @@ button:hover {
 .contact-section img {
     vertical-align: middle;
 }
+
+/* Aggiungi stile all'icon-box */
+.icon-box {
+    background-color: white;
+    padding: 5px;
+    border-radius: 3px;
+    display: inline-block;
+    margin-right: 10px;
+    color: rgba(37, 162, 195, 255);
+}
+
+/* Stile per la descrizione dei contatti */
+.contact-description {
+    display: inline;
+    color: white;
+    font-size: 18px;
+    vertical-align: middle;
+}
