@@ -10,23 +10,17 @@
   - Array (Array): Rappresenta una lista ordinata di elementi.
   - Null: Rappresenta l'assenza di valore.
   - Undefined: Rappresenta una variabile che è stata dichiarata ma non ha un valore assegnato.
+  - Data: data in ogni suo formato.
+
 */
 
-/*
-Numero (Number): È come i numeri che usi per contare le cose, come 1, 2, 3.
-Stringa (Stringa): Sono come le parole o le frasi che scrivi, come "ciao" o "hello".
-Booleano (Booleano): Sono come le risposte "sì" o "no", o "vero" o "falso".
-Oggetto (Oggetto): È come un contenitore che può contenere molte cose diverse insieme.
-Array (Array): È come una lista di cose in ordine.
-Null: Significa che non c'è niente, è vuoto.
-Undefined: È come se qualcosa esistesse, ma non sappiamo cosa sia.
-*/
 
 /* ESERCIZIO 2
  Crea una variabile chiamata "name" e assegnale il tuo nome sotto forma di stringa.
 */
 
-let name = "Michele";
+let myname = "Michele";
+console.log(myname);
 
 /* ESERCIZIO 3
  Scrivi il codice necessario per effettuare un'addizione (una somma) dei numeri 12 e 20.
@@ -40,14 +34,16 @@ console.log("Il risultato dell'addizione è:", risultatoSomma);
 */
 
 let x = 12;
+console.log(x);
 
 /* ESERCIZIO 5
  Riassegna un nuovo valore alla variabile "name" già esistente: il tuo cognome.
  Verifica l'impossibilità di riassegnare un valore a una variabile dichiarata con il costrutto const.
 */
 
-name = "Cognome"; // Riassegnamento del valore a una variabile "let" già esistente
-
+myname = "Spada"; // Riassegnamento del valore a una variabile "let" già esistente
+console.log (myName)
+const persona = myName
 const numeroCostante = 42;
 // numeroCostante = 10; // Tentativo di riassegnare un valore a una variabile "const" genererà un errore
 
