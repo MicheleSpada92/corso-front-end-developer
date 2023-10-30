@@ -42,8 +42,8 @@ console.log(x);
 */
 
 myname = "Spada"; // Riassegnamento del valore a una variabile "let" già esistente
-console.log (myName)
-const persona = myName
+console.log (myname) // Utilizza myname invece di myName per evitare errori di maiuscole/minuscole
+
 const numeroCostante = 42;
 // numeroCostante = 10; // Tentativo di riassegnare un valore a una variabile "const" genererà un errore
 
