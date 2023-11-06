@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolo Esercizi</title>
+</head>
+<body>
+    <div>
+        <h2>ESERCIZIO 1: Scrivi una funzione di nome "area", che riceve due parametri (l1, l2) e calcola l'area del rettangolo associato.</h2>
+    </div>
+    
+    <div>
+        <!-- Input per inserire le lunghezze dei lati del rettangolo -->
+        Lunghezza lato 1: <input type="number" id="lato1">
+        Lunghezza lato 2: <input type="number" id="lato2">
+        <button onclick="calcolaArea()">Calcola Area</button>
+    </div>
+    <div id="exercise1Result"></div>
+    
+    <script>
+      function calcolaArea() {
+        const lato1 = parseFloat(document.getElementById('lato1').value);
+        const lato2 = parseFloat(document.getElementById('lato2').value);
+    
+        if (isNaN(lato1) || isNaN(lato2)) {
+          alert('Inserisci valori validi per le lunghezze dei lati.');
+          return;
+        }
+    
+        const result = area(lato1, lato2);
+    
+        // Mostra il risultato sulla pagina
+        const exercise1Result = document.getElementById('exercise1Result');
+        exercise1Result.innerHTML = `Area del rettangolo con l1 = ${lato1} e l2 = ${lato2}: ${result}`;
+    
+        exercise1Result.style.color = 'green'; // Corretto l'errore qui
+      }
+    
+      function area(l1, l2) {
+        // Calcola l'area del rettangolo moltiplicando le lunghezze dei lati
+        const result = l1 * l2;
+        return result;
+      }
+    </script>
+
+<div>
+    <h2>ESERCIZIO 2: Scrivi una funzione di nome "crazySum", che riceve due numeri interi come parametri. La funzione deve ritornare la somma dei due parametri, ma se il valore dei due parametri è il medesimo deve invece tornare la loro somma moltiplicata per tre.</h2>
+</div>
+
+<div>
+  <!-- Input per inserire i due numeri -->
+  Numero 1: <input type="number" id="num1">
+  Numero 2: <input type="number" id="num2">
+  <button onclick="calcolaCrazySum()">Calcola crazySum</button>
+</div>
+<div id="exercise2Result"></div>
+
+<script>
+  function calcolaCrazySum() {
+    const num1 = parseFloat(document.getElementById('num1').value);
+    const num2 = parseFloat(document.getElementById('num2').value);
+
+    if (isNaN(num1) || isNaN(num2)) {
+      alert('Inserisci valori numerici validi.');
+      return;
+    }
+
+    let result;
+    if (num1 === num2) {
+      result = (num1 + num2) * 3;
+    } else {
+      result = num1 + num2;
+    }
+
+    // Mostra il risultato sulla pagina
+    const exercise2Result = document.getElementById('exercise2Result');
+    exercise2Result.innerHTML = `Risultato di crazySum: ${result}`;
+    exercise2Result.style.color = 'green';
+  }
+</script>
+
+<div>
+    <h2>ESERCIZIO 3: Scrivi una funzione di nome "crazyDiff" che calcola la differenza assoluta tra un numero fornito come parametro e 19. Deve inoltre tornare la differenza assoluta moltiplicata per tre qualora il numero fornito sia maggiore di 19.</h2>
+</div>
+
+<div>
+  <!-- Input per inserire un numero -->
+  Numero: <input type="number" id="numero">
+  <button onclick="calcolaCrazyDiff()">Calcola crazyDiff</button>
+</div>
+<div id="exercise3Result"></div>
+
+<script>
+  function calcolaCrazyDiff() {
+    const numero = parseFloat(document.getElementById('numero').value);
+
+    if (isNaN(numero)) {
+      alert('Inserisci un valore numerico valido.');
+      return;
+    }
+
+    let result;
+    const diff = Math.abs(numero - 19);
+    if (numero > 19) {
+      result = diff * 3;
+    } else {
+      result = diff;
+    }
+
+    // Mostra il risultato sulla pagina
+    const exercise3Result = document.getElementById('exercise3Result');
+    exercise3Result.innerHTML = `Risultato di crazyDiff: ${result}`;
+    exercise3Result.style.color = 'green';
+  }
+</script>
+
+<div>
+    <h2>ESERCIZIO 4: Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure se n è uguale a 400.</h2>
+</div>
+
+<div>
+  <!-- Input per inserire un numero -->
+  Numero: <input type="number" id="numero2">
+  <button onclick="calcolaBoundary()">Calcola boundary</button>
+</div>
+<div id="exercise4Result"></div>
+
+<script>
+  function calcolaBoundary() {
+    const numero2 = parseFloat(document.getElementById('numero2').value);
+
+    if (isNaN(numero2)) {
+      alert('Inserisci un valore numerico valido.');
+      return;
+    }
+
+    let result;
+    if ((numero2 >= 20 && numero2 <= 100) || numero2 === 400) {
+      result = true;
+    } else {
+      result = false;
+    }
+
+    // Mostra il risultato sulla pagina
+    const exercise4Result = document.getElementById('exercise4Result');
+    exercise4Result.innerHTML = `Risultato di boundary: ${result}`;
+    exercise4Result.style.color = 'green';
+  }
+</script>
+
+<div>
+    <h2>ESERCIZIO 5: Scrivi una funzione di nome "epify" che accetta una stringa come parametro. La funzione deve aggiungere la parola "EPICODE" all'inizio della stringa fornita, ma se la stringa fornita comincia già con "EPICODE" allora deve ritornare la stringa originale senza alterarla.</h2>
+</div>
+
+<div>
+  <!-- Input per inserire una stringa -->
+  Stringa: <input type="text" id="inputString">
+  <button onclick="calcolaEpify()">Calcola epify</button>
+</div>
+<div id="exercise5Result"></div>
+
+<script>
+  function calcolaEpify() {
+    const inputString = document.getElementById('inputString').value;
+    let result;
+
+    if (inputString.startsWith("EPICODE")) {
+      // La stringa inizia già con "EPICODE", quindi ritorniamo la stringa originale
+      result = inputString;
+    } else {
+      // Aggiungiamo "EPICODE" all'inizio della stringa
+      result = "EPICODE" + inputString;
+    }
+
+    // Mostra il risultato sulla pagina
+    const exercise5Result = document.getElementById('exercise5Result');
+    exercise5Result.innerHTML = `Risultato di epify: ${result}`;
+    exercise5Result.style.color = 'green';
+  }
+</script>
+
+<div>
+    <h2>ESERCIZIO 6: Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo di 3 o di 7.</h2>
+</div>
+
+<div>
+  <!-- Input per inserire un numero -->
+  Numero: <input type="number" id="inputNumber">
+  <button onclick="calcolaCheck3and7()">Calcola check3and7</button>
+</div>
+<div id="exercise6Result"></div>
+
+<script>
+  function calcolaCheck3and7() {
+    const inputNumber = parseFloat(document.getElementById('inputNumber').value);
+
+    if (isNaN(inputNumber) || inputNumber <= 0) {
+      alert('Inserisci un numero positivo valido.');
+      return;
+    }
+
+    let result;
+
+    if (inputNumber % 3 === 0 || inputNumber % 7 === 0) {
+      result = true;
+    } else {
+      result = false;
+    }
+
+    // Mostra il risultato sulla pagina
+    const exercise6Result = document.getElementById('exercise6Result');
+    exercise6Result.innerHTML = `Risultato di check3and7: ${result}`;
+    exercise6Result.style.color = 'green';
+  }
+
+  
+</script>
+
+<div>
+    <h2>ESERCIZIO 7: Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE").</h2>
+</div>
+
+<div>
+  <!-- Input per inserire una stringa -->
+  Stringa: <input type="text" id="inputString7">
+  <button onclick="calcolaReverseString()">Calcola reverseString</button>
+</div>
+<div id="exercise7Result"></div>
+
+<script>
+  function calcolaReverseString() {
+    const inputString7 = document.getElementById('inputString7').value;
+    const result = reverseString(inputString7);
+
+    // Mostra il risultato sulla pagina
+    const exercise7Result = document.getElementById('exercise7Result');
+    exercise7Result.innerHTML = `Risultato di reverseString: ${result}`;
+    exercise7Result.style.color = 'green';
+  }
+
+  function reverseString(str) {
+    return str.split('').reverse().join('');
+  }
+</script>
+
+<div>
+    <h2>ESERCIZIO 8: Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole. La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.</h2>
+</div>
+
+<div>
+  <!-- Input per inserire una stringa -->
+  Stringa: <input type="text" id="inputString8">
+  <button onclick="calcolaUpperFirst()">Calcola upperFirst</button>
+</div>
+<div id="exercise8Result"></div>
+
+<script>
+  function calcolaUpperFirst() {
+    const inputString8 = document.getElementById('inputString8').value;
+    const result = upperFirst(inputString8);
+
+    // Mostra il risultato sulla pagina
+    const exercise8Result = document.getElementById('exercise8Result');
+    exercise8Result.innerHTML = `Risultato di upperFirst: ${result}`;
+    exercise8Result.style.color = 'green';
+  }
+
+  function upperFirst(str) {
+    return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+  }
+</script>
+
+<div>
+    <h2>ESERCIZIO 9: Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere della stringa originale.</h2>
+</div>
+
+<div>
+  <!-- Input per inserire una stringa -->
+  Stringa: <input type="text" id="inputString9">
+  <button onclick="calcolaCutString()">Calcola cutString</button>
+</div>
+<div id="exercise9Result"></div>
+
+<script>
+  function calcolaCutString() {
+    const inputString9 = document.getElementById('inputString9').value;
+    const result = cutString(inputString9);
+
+    // Mostra il risultato sulla pagina
+    const exercise9Result = document.getElementById('exercise9Result');
+    exercise9Result.innerHTML = `Risultato di cutString: ${result}`;
+    exercise9Result.style.color = 'green';
+  }
+
+  function cutString(str) {
+    if (str.length < 2) {
+      return 'La stringa deve avere almeno 2 caratteri.';
+    }
+    return str.slice(1, -1);
+  }
+</script>
+
+<div>
+    <h2>ESERCIZIO 10: Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.</h2>
+</div>
+
+<div>
+  <!-- Input per inserire un numero -->
+  Numero n: <input type="number" id="inputNumber10">
+  <button onclick="calcolaGiveMeRandom()">Calcola giveMeRandom</button>
+</div>
+<div id="exercise10Result"></div>
+
+<script>
+  function calcolaGiveMeRandom() {
+    const inputNumber10 = parseFloat(document.getElementById('inputNumber10').value);
+    const result = giveMeRandom(inputNumber10);
+
+    // Mostra il risultato sulla pagina
+    const exercise10Result = document.getElementById('exercise10Result');
+    exercise10Result.innerHTML = `Risultato di giveMeRandom: [${result.join(', ')}]`;
+    exercise10Result.style.color = 'green';
+  }
+
+  function giveMeRandom(n) {
+    if (isNaN(n) || n < 0) {
+      return 'Inserisci un numero intero positivo.';
+    }
+    const randomNumbers = [];
+    for (let i = 0; i < n; i++) {
+      randomNumbers.push(Math.floor(Math.random() * 11)); // Numeri casuali tra 0 e 10
+    }
+    return randomNumbers;
+  }
+</script>
+
+<script src="U1-W2-D4/D4.js">
+    
+</script>
+
+</body>
+</html>
