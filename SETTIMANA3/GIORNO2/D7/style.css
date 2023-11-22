@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+table th {
+  text-align: left;
+}
+
+table th:first-of-type {
+  width: 20%;
+}
+
+body div,
+footer {
+  padding: 1rem;
+}
+
+footer {
+  padding: 1rem;
+  background-color: black;
+  color: white;
+}
+
+.myHeading {
+  color: #FF00D6;
+}
+
+.bgGreen {
+  background-color: #4caf50;
+}
