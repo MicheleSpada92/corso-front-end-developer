@@ -1,0 +1,227 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.main-header {
+    position: fixed; /* Imposta l'header come fisso */
+    top: 0; /* Fissa l'header all'inizio della finestra del browser */
+    width: 100%; /* Imposta la larghezza al 100% della finestra del browser */
+    background-color: rgba(255, 192, 23, 255);
+    color: #fff;
+    padding: 12px 0;
+    z-index: 1000; /* Imposta uno z-index elevato per sovrapporlo ad altri elementi */
+    border-bottom: 1px solid #000;
+
+}
+
+
+
+.logo {
+    font-size: 1.5em;
+    padding-left: 80px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin-right: 20px; /* Applica il margine solo agli elementi normali */
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: normal;
+    font-size: 14px; /* Imposta la dimensione del carattere a 14px */
+    padding: 5px 10px; /* Imposta il padding per rendere il testo più stretto */
+}
+
+/*margine generale per gli elementi normali */
+nav li:not(:last-child) {
+    margin-right: 10px;
+}
+
+/* Applica uno stile specifico solo a Get Started */
+nav a.get-started {
+    margin-right: 80px; /* Regola questo valore per la spaziatura desiderata */
+    background-color: #000; /* Sfondo nero */
+    color: #fff; /* Testo bianco */
+    border-radius: 50px; /* Angoli arrotondati */
+    padding: 10px 20px; /* Aumenta il padding per aumentare l'altezza */
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    
+
+}
+
+.hero-section {
+    display: flex;
+     /* Allinea i figli verticalmente al centro */
+    justify-content: space-between; /* Distribuisci gli spazi tra i figli */
+     /* Spaziatura sopra e sotto la sezione */
+    
+    background-color: rgba(255, 192, 23, 255);
+    border-bottom: 1px solid #000;
+}
+
+.m-animation {
+    /* Rimuovi il padding e margin di default del contenitore svg */
+    margin: left;
+    padding: 70px 0; /* Spaziatura sopra e sotto la sezione */
+}
+
+.text {
+    margin-top: 100px;
+    margin-left: 50px;
+}
+
+h1 {
+
+    font-size: 5em;
+    margin-top: 100px;
+}
+
+p {
+    font-size: 1.2em;
+    color: rgba(16, 5, 53, 0.864);
+    
+}
+
+.Start-button {
+    background-color: black;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 80px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+.container2 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trending-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.character-card {
+    flex: 0 0 calc(30% - 20px);
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.card-number {
+    font-size: 1.5em;
+    margin-right: 20px;
+    color: #999;
+    margin-bottom: 150px;
+}
+
+.character-image-container {
+    flex: 0 0 80px;
+    border-bottom: 50px;
+}
+
+.character-image {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.character-details {
+    flex: 1;
+}
+
+.character-details h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.character-details p {
+    margin: 0;
+    color: #666;
+}
+
+
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Per allineare gli elementi in alto */
+    flex-wrap: wrap; /* Per gestire la responsività su schermi più stretti */
+    margin-top: 80px;
+}
+
+.vertical-profile-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    width: calc(50% - 10px); /* Per fare sì che ciascun profilo occupi il 50% della larghezza con uno spazio di 10px tra di essi */
+    box-sizing: border-box;
+}
+
+.profile-image-container {
+    margin-right: 20px;
+}
+
+.profile-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-bottom: 80px;
+}
+
+.profile-details {
+    flex: 1;
+}
+
+
+
+h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.profile-details p {
+    margin: 0;
+    color: #666;
+}
+
+.right-image-container {
+    width: calc(50% - 0px); /* Per fare sì che l'immagine occupi il restante 50% della larghezza con uno spazio di 10px tra di esse */
+}
+
+.right-image {
+    max-width: 30%;
+    height: auto;
+    display: block; /* Per rimuovere il margine bianco alla base dell'immagine */
+    margin-left: 40px;
+}
