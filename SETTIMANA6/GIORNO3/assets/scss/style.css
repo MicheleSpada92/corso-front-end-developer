@@ -1,0 +1,278 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+}
+
+.padding-block-sm {
+  padding-block: 0.5rem;
+}
+
+.padding-block-normal {
+  padding-block: 1rem;
+}
+
+.padding-block-md {
+  padding-block: 1.5rem;
+}
+
+.padding-block-lg {
+  padding-block: 2rem;
+}
+
+.padding-block-xl {
+  padding-block: 2.5rem;
+}
+
+.padding-block-xxl {
+  padding-block: 3rem;
+}
+
+.padding-inline-sm {
+  padding-inline: 0.5rem;
+}
+
+.padding-inline-normal {
+  padding-inline: 1rem;
+}
+
+.padding-inline-md {
+  padding-inline: 1.5rem;
+}
+
+.padding-inline-lg {
+  padding-inline: 2rem;
+}
+
+.padding-inline-xl {
+  padding-inline: 2.5rem;
+}
+
+.padding-inline-xxl {
+  padding-inline: 3rem;
+}
+
+.margin-block-sm {
+  margin-block: 0.5rem;
+}
+
+.margin-block-normal {
+  margin-block: 1rem;
+}
+
+.margin-block-md {
+  margin-block: 1.5rem;
+}
+
+.margin-block-lg {
+  margin-block: 2rem;
+}
+
+.margin-block-xl {
+  margin-block: 2.5rem;
+}
+
+.margin-block-xxl {
+  margin-block: 3rem;
+}
+
+.margin-inline-sm {
+  margin-inline: 0.5rem;
+}
+
+.margin-inline-normal {
+  margin-inline: 1rem;
+}
+
+.margin-inline-md {
+  margin-inline: 1.5rem;
+}
+
+.margin-inline-lg {
+  margin-inline: 2rem;
+}
+
+.margin-inline-xl {
+  margin-inline: 2.5rem;
+}
+
+.margin-inline-xxl {
+  margin-inline: 3rem;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+.btn-secondary {
+  background-color: #2ecc71;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+.btn-tertiary {
+  background-color: #e74c3c;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #217dbb;
+}
+
+.btn-secondary {
+  background-color: #2ecc71;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-secondary:hover {
+  background-color: #25a25a;
+}
+
+.btn-tertiary {
+  background-color: #e74c3c;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+.btn-tertiary:hover {
+  background-color: #d62c1a;
+}
+
+@keyframes fadeAndSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.navbar {
+  padding-block: 0.75rem;
+  margin-block: 1rem;
+  background-color: #333;
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navbar-logo {
+  width: 2%;
+  height: auto;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.headline {
+  background-color: #ff8700;
+  padding: 2rem;
+  color: #f4f4f4;
+  text-align: center;
+  animation: fadeAndSlide 1s ease-out;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
+
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  float: right;
+  margin-left: 1rem;
+  animation: fadeAndSlide 1s ease-out;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  animation: fadeAndSlide 1s ease-out;
+}
+
+.grid-item {
+  background-color: #ffffff;
+  padding: 1rem;
+  text-align: center;
+  animation: fadeAndSlide 1s ease-out;
+}
+
+.small-image {
+  max-width: 50%;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

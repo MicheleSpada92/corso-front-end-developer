@@ -228,3 +228,24 @@ h3 {
 }
 
 
+section.wall .grid > .col-main {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 58.333%;
+    width: 58.333%;
+  }
+
+  section.wall .grid > aside {
+    min-height: 30px;
+    position: sticky;
+    top: 110px;
+  }
+
+
+section.wall .grid > aside h4 {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

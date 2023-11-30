@@ -1,0 +1,54 @@
+// spacings.scss
+
+$size-map: (
+  sm: 0.5,
+  normal: 1,
+  md: 1.5,
+  lg: 2,
+  xl: 2.5,
+  xxl: 3
+);
+
+@each $type in (padding, margin) {
+  @each $location in (block, inline) {
+    @each $size, $calculated-size in $size-map {
+      .#{$type}-#{$location}-#{$size} {
+        #{$type}-#{$location}: $calculated-size * 1rem; // Moltiplica per 1rem
+      }
+    }
+  }
+}
+
+
+$navbar-padding: 1rem; // Sostituisci con il valore desiderato per il padding della navbar
+// Altre definizioni di spaziature
+
+@mixin padding-block-md {
+    padding-block: 0.75rem; // Sostituisci con il valore desiderato
+  }
+
+  @mixin margin-block-lg {
+    margin-block: 1rem; // Sostituisci con il valore desiderato
+  }
+
+  $navbar-link-margin: 1rem; // Sostituisci con il valore desiderato per il margine dei link nella navbar
+// Altre definizioni di spaziature
+
+$hero-cta-margin-top: 1rem; // Sostituisci con il valore desiderato per il margine superiore dei pulsanti CTA nella sezione hero
+// Altre definizioni di spaziature
+
+$hero-background-color: #ff8700; // Sostituisci con il colore desiderato per lo sfondo della sezione hero
+// Altre definizioni di colori
+
+
+$hero-padding: 2rem; // Sostituisci con il valore desiderato per il padding della sezione hero
+// Altre definizioni di spaziature
+
+$hero-image-margin-left: 1rem; // Sostituisci con il valore desiderato per il margine sinistro dell'immagine hero
+// Altre definizioni di spaziature
+
+$grid-gap: 1rem; // Sostituisci con il valore desiderato per lo spazio tra gli elementi della griglia
+// Altre definizioni di spaziature
+
+$grid-item-padding: 1rem; // Sostituisci con il valore desiderato per il padding degli elementi della griglia
+// Altre definizioni di spaziature

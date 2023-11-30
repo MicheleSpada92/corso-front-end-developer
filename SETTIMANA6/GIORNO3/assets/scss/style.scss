@@ -1,0 +1,93 @@
+// style.scss
+
+$button-colors: (
+  primary: #3498db,
+  secondary: #2ecc71,
+  tertiary: #e74c3c
+);
+
+
+@import 'reset';
+@import 'colors';
+@import 'font';
+@import 'spacings';
+@import 'buttons';
+@import 'mixins';
+@import 'animations';
+
+// Altri stili globali e specifici della pagina
+
+// Navbar styles
+.navbar {
+    @include padding-block-md;
+    @include margin-block-lg;
+    background-color: $navbar-background-color;
+    padding: $navbar-padding;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    // Altri stili desiderati per la navbar
+  }
+  
+  // Logo styles
+    .navbar-logo {
+        width: 2%; // La larghezza massima sarà il 100% del contenitore
+        height: auto;
+    // Altri stili per il logo
+  }
+  
+  // Link styles
+  .navbar-link {
+    color: $navbar-link-color;
+    text-decoration: none;
+    margin-left: $navbar-link-margin;
+  }
+  
+  // Headline styles
+.headline {
+    background-color: $hero-background-color;
+    padding: $hero-padding;
+    color: $hero-text-color;
+    text-align: center;
+    animation: fadeAndSlide 1s ease-out; // Applica l'animazione fadeAndSlide
+
+  }
+  
+  // Call-to-action buttons
+  .cta-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: $hero-cta-margin-top;
+  }
+
+  // Hero image
+.hero-image {
+    max-width: 100%;
+    height: auto;
+    float: right;
+    margin-left: $hero-image-margin-left;
+    animation: fadeAndSlide 1s ease-out; // Applica l'animazione fadeAndSlide
+  }
+
+  // Grid styles
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $grid-gap;
+    animation: fadeAndSlide 1s ease-out; // Applica l'animazione fadeAndSlide
+  }
+  
+  // Grid item styles
+  .grid-item {
+    background-color: $grid-item-background-color;
+    padding: $grid-item-padding;
+    text-align: center;
+    animation: fadeAndSlide 1s ease-out; // Applica l'animazione fadeAndSlide
+  }
+
+  .small-image {
+    max-width: 50%;
+    height: auto;
+  }
+  

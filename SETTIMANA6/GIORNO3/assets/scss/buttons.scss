@@ -1,0 +1,36 @@
+// buttons.scss
+
+$button-colors: (
+  primary: #3498db,
+  secondary: #2ecc71,
+  tertiary: #e74c3c
+);
+
+@import 'mixins'; // Assicurati che il percorso sia corretto rispetto alla posizione del file
+
+@each $color, $value in $button-colors {
+  .btn-#{$color} {
+    background-color: $value;
+    @include floating; // Usa il mixin "floating" definito nei mixins generici
+  }
+}
+
+// Altri stili per i bottoni
+@each $color, $value in $button-colors {
+    .btn-#{$color} {
+      background-color: $value;
+      @include floating;
+  
+      padding: 10px 20px; // Puoi personalizzare le dimensioni del padding
+      color: #fff; // Cambia il colore del testo
+      text-decoration: none;
+      font-size: 16px; // Puoi personalizzare la dimensione del testo
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: darken($value, 10%); // Sfuma leggermente il colore al passaggio del mouse
+      }
+    }
+  }
