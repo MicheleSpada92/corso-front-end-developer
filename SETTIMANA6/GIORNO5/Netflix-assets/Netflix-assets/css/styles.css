@@ -1,0 +1,76 @@
+
+  
+  body {
+    background: black;
+  }
+
+
+
+  .btn {
+    border-radius: 0;
+  }
+  
+  #logo {
+    height: 50px;
+  }
+  
+  #avatar {
+    height: 40px;
+  }
+  
+  #avatar-small {
+    height: 22px;
+    margin-right: 10px;
+  }
+  
+  .dropdown-menu {
+    margin-left: -100px;
+    background-color: var(--home-bg-color);
+  }
+  
+  .icon {
+    margin: 4px 10px;
+  }
+  
+  .dropdown-menu a {
+    font-size: 12px;
+  }
+  
+  :root {
+    --home-bg-color: #000;
+    --account-bg-color: #f3f3f3;
+    --text-color: #fff;
+    --primary-color: #e40a13;
+    --secondary-color: #929292;
+  }
+
+
+
+  
+  .movie-cover:hover {
+    opacity: 2;
+    transition: 0.5s;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+  
+  :is(.carousel-control-prev, .carousel-control-next) {
+    width: 35px;
+  }
+  
+  
+  .profile-page {
+    
+    color: #fff;
+  }
+  
+  .profile-page .btn {
+    letter-spacing: 0.05rem;
+  }
+  
+
+  
+.navbar {
+    background-color: black !important;
+}
