@@ -1,0 +1,20 @@
+/* Stile aggiuntivo per il carrello in alto a destra */
+#cartContainer {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+}
+  
+  /* Stile aggiuntivo per rendere le schede dei libri più piccole */
+  .card {
+    width: 15rem; /* Imposta la larghezza desiderata */
+  }
+  
+  /* Forza tutte le immagini delle card ad avere le stesse dimensioni */
+  .card img {
+    width: 100%;
+    height: 300px; /* Imposta l'altezza desiderata */
+     /* Imposta il tipo di ridimensionamento */
+  }
+  
