@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back Office - Shop</title>
+   <link rel="stylesheet" href="css/styleproduct.css">
+</head>
+<body>
+
+    <div id="app">
+        <!-- Form per l'aggiunta/modifica di prodotti -->
+        <div>
+            <h2>Add/Edit Product</h2>
+            <form id="productForm">
+                <label for="productName">Name:</label>
+                <input type="text" id="productName" required>
+
+                <label for="productBrand">Brand:</label>
+                <input type="text" id="productBrand" required>
+
+
+                <label for="productPrice">Price:</label>
+                <input type="number" id="productPrice" required>
+
+                <button type="submit" id="submitBtn">Add Product</button>
+                <button type="button" onclick="resetForm()">Reset</button>
+                <button type="button" onclick="cancelEdit()" id="cancelBtn" style="display: none;">Cancel</button>
+            </form>
+        </div>
+
+        <!-- Elenco dei prodotti -->
+        <div>
+            <h2>Product List</h2>
+            <ul id="productList"></ul>
+        </div>
+    </div>
+
+<!-- HTML per la finestra modale di dettaglio -->
+<div id="productDetailsModal" style="display: none;">
+    <div id="productDetailsContent">
+        <h3>Product Details</h3>
+        <!-- Altre informazioni sul prodotto qui -->
+        <img src="https://source.unsplash.com/featured/?phone" alt="Phone Image" width="300">
+    </div>
+    <button onclick="closeProductDetailsModal()">Chiudi</button>
+</div>
+
+<script src="js/app.js"></script>
+</html>
