@@ -62,3 +62,30 @@
         text-decoration: underline;
     }
 
+    .product-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px; /* Aggiungi spazio tra gli elementi */
+    }
+
+    .product-info {
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .text-info {
+        text-align: center;
+        margin-left: 100px; /* Aggiungi spazio tra l'immagine e il testo */
+    }
+
+    .buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    .buttons button,
+    .buttons a {
+        margin-left: 10px; /* Aggiungi spazio tra i pulsanti */
+    }

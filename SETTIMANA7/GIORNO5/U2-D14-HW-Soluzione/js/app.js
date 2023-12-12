@@ -56,19 +56,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function displayProducts(products) {
         productList.innerHTML = '';
-
+    
         products.forEach((product) => {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
-                <strong>${product.name}</strong> - ${product.brand} - ${product.price}€ 
-                <img src="${product.imageUrl}" alt="${product.name}" width="100">
-                <button onclick="editProductForm('${product._id}')">Edit</button> 
-                <button onclick="deleteProduct('${product._id}')">Delete</button>
-                <a href="product-details.html?productId=${product._id}">Scopri di più</a>`;
+                <div class="product-info">
+                    <img src="${getRandomPhoneImage()}" alt="${product.name}" width="100" onerror="imageError('${product.imageUrl}')">
+                    <div class="text-info">
+                        <strong>${product.name}</strong>
+                        <p>${product.brand}</p>
+                        <p>${product.price}€</p>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button onclick="editProductForm('${product._id}')">Edit</button> 
+                    <button onclick="deleteProduct('${product._id}')">Delete</button>
+                    <a href="product-details.html?productId=${product._id}">Scopri di più</a>
+                </div>`;
+    
+            listItem.classList.add('product-item'); // Aggiungi una classe per lo stile CSS
             productList.appendChild(listItem);
         });
-
+    
         console.log('Products displayed:', products);
+    }
+    
+    // Funzione per ottenere un'immagine casuale di telefono da Unsplash
+    function getRandomPhoneImage() {
+        const randomImageUrl = `https://source.unsplash.com/featured/?phone${Math.random()}`;
+        return randomImageUrl;
+    }
+    
+    // Funzione per gestire gli errori delle immagini
+    function imageError(url) {
+        console.error(`Error loading image: ${url}`);
     }
 
     async function addProduct(formData) {
