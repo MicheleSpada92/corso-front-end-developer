@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             throw error;
         }
     }
-
+    
     async function editProduct(productId, formData) {
         try {
             const authToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc4MTkyZmMwNTgzNTAwMTg1MjJjOTYiLCJpYXQiOjE3MDIzNjk1ODMsImV4cCI6MTcwMzU3OTE4M30.wnxVz5mS_gIqm9e9WVNgbtt41pjsjevDBP2w1S74CbY";
@@ -154,19 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         resetForm();
     });
 
-    function resetForm() {
-        const productForm = document.getElementById('productForm');
-        const cancelBtn = document.getElementById('cancelBtn');
-
-        // Resettare i campi del modulo
-        productForm.reset();
-
-        // Altre azioni di reset, se necessario
-
-        editingProductId = null;
-        cancelBtn.style.display = 'none';
-        submitBtn.innerText = 'Add Product';
-    }
+    
 });
 
 function closeProductDetailsModal() {
@@ -194,4 +182,19 @@ async function fetchProductDetails(productId) {
         console.error('Error fetching product details:', error);
         throw error;
     }
+}
+
+function resetForm() {
+    const productForm = document.getElementById('productForm');
+    const cancelBtn = document.getElementById('cancelBtn');
+
+    // Resetta i campi del modulo
+    productForm.reset();
+
+    // Imposta manualmente il campo del prezzo a vuoto
+    document.getElementById('productPrice').value = '';
+
+    editingProductId = null;
+    cancelBtn.style.display = 'none';
+    submitBtn.innerText = 'Add Product';
 }
