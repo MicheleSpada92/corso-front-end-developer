@@ -1,9 +1,8 @@
-import { Card, Col, Row } from 'react-bootstrap'
-import fantasy from '../data/fantasy.json'
+import { Card, Col, Row } from 'react-bootstrap';
+import fantasy from '../data/fantasy.json';
+import CommentArea from './CommentArea';
 
 const AllTheBooks = () => {
-  console.log(fantasy)
-
   return (
     <Row>
       {fantasy.map((book) => {
@@ -13,13 +12,15 @@ const AllTheBooks = () => {
               <Card.Img variant="top" src={book.img} />
               <Card.Body>
                 <Card.Title>{book.title}</Card.Title>
+                {/* Aggiungi la componente CommentArea passando l'elementId del libro */}
+                <CommentArea elementId={book.asin} />
               </Card.Body>
             </Card>
           </Col>
-        )
+        );
       })}
     </Row>
-  )
-}
+  );
+};
 
-export default AllTheBooks
+export default AllTheBooks;

@@ -1,11 +1,11 @@
-import { Component } from 'react'
-import SingleBook from './SingleBook'
-import { Col, Form, Row } from 'react-bootstrap'
+import React, { Component } from 'react';
+import SingleBook from './SingleBook';
+import { Col, Form, Row } from 'react-bootstrap';
 
 class BookList extends Component {
   state = {
     searchQuery: '',
-  }
+  };
 
   render() {
     return (
@@ -26,7 +26,7 @@ class BookList extends Component {
         <Row>
           {this.props.books
             .filter((b) =>
-              b.title.toLowerCase().includes(this.state.searchQuery)
+              b.title.toLowerCase().includes(this.state.searchQuery.toLowerCase())
             )
             .map((b) => (
               <Col xs={12} md={4} key={b.asin}>
@@ -35,8 +35,8 @@ class BookList extends Component {
             ))}
         </Row>
       </>
-    )
+    );
   }
 }
 
-export default BookList
+export default BookList;
