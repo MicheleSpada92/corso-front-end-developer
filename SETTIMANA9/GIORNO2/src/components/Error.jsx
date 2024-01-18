@@ -1,12 +1,7 @@
-// Error.jsx
-import React from 'react';
+import { Alert } from 'react-bootstrap'
 
-const Error = ({ message }) => {
-  return (
-    <div style={{ color: 'red', padding: '10px', border: '1px solid red', borderRadius: '5px' }}>
-      <p>Errore: {message}</p>
-    </div>
-  );
-};
+const Error = () => (
+  <Alert variant="danger">Error - Did you use your auth headers?</Alert>
+)
 
-export default Error;
+export default Error

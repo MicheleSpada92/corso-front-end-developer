@@ -1,13 +1,7 @@
-// Loading.jsx
-import React from 'react';
+import { Spinner } from 'react-bootstrap'
 
-const Loading = () => {
-  return (
-    <div>
-      <p>Caricamento in corso...</p>
-      {/* Puoi personalizzare il messaggio o aggiungere uno spinner, se lo desideri */}
-    </div>
-  );
-};
+const Loading = () => (
+  <Spinner animation="border" variant="success" className="mt-2" />
+)
 
-export default Loading;
+export default Loading

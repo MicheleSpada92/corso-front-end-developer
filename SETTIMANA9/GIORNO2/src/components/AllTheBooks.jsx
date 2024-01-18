@@ -1,24 +1,25 @@
+// AllTheBooks.jsx
+
+import React, { useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import fantasy from '../data/fantasy.json';
-import CommentArea from './CommentArea';
+import SingleBook from './SingleBook';
 
-const AllTheBooks = () => {
+const AllTheBooks = ({ onSelectBook }) => {
+  const [selectedBook, setSelectedBook] = useState(null);
+
+  const handleSelectBook = (book) => {
+    setSelectedBook(book);
+    onSelectBook(book); // Passa l'intero libro alla funzione onSelectBook
+  };
+
   return (
     <Row>
-      {fantasy.map((book) => {
-        return (
-          <Col xs={12} md={4} key={book.asin}>
-            <Card className="book-cover">
-              <Card.Img variant="top" src={book.img} />
-              <Card.Body>
-                <Card.Title>{book.title}</Card.Title>
-                {/* Aggiungi la componente CommentArea passando l'elementId del libro */}
-                <CommentArea elementId={book.asin} />
-              </Card.Body>
-            </Card>
-          </Col>
-        );
-      })}
+      {fantasy.map((book) => (
+        <Col xs={12} md={4} key={book.asin} onClick={() => handleSelectBook(book)}>
+          <SingleBook book={book} isSelected={book === selectedBook} />
+        </Col>
+      ))}
     </Row>
   );
 };

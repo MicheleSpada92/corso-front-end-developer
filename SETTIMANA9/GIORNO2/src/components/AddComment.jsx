@@ -1,67 +1,92 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react'
+import { Button, Form } from 'react-bootstrap'
 
-const AddComment = (props) => {
-  const [newComment, setNewComment] = useState('');
-  const [newRate, setNewRate] = useState('');
+const AddComment = ({ asin }) => {
+  const [comment, setComment] = useState({
+    comment: '',
+    rate: 1,
+    elementId: null,
+  })
 
-  const handleAddComment = async () => {
-    console.log('props:', props);
-    console.log('props.book:', props.book);
-    console.log('props.book.asin:', props.book && props.book.asin);
-    
-    if (!newComment || !newRate || !props?.book?.asin) {
-        console.error('Il testo del commento e il voto sono obbligatori');
-        return;
-      }
+  useEffect(() => {
+    setComment((c) => ({
+      ...c,
+      elementId: asin,
+    }))
+  }, [asin])
 
-    const commentData = {
-      comment: newComment,
-      rate: newRate,
-      elementId: props.book.asin,
-    };
-
+  const sendComment = async (e) => {
+    e.preventDefault()
     try {
-      const response = await fetch(
-        'https://striveschool-api.herokuapp.com/api/comments/',
+      let response = await fetch(
+        'https://striveschool-api.herokuapp.com/api/comments',
         {
           method: 'POST',
+          body: JSON.stringify(comment),
           headers: {
-            'Content-Type': 'application/json',
-            Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTlmZjMwYzI5ZTM2YjAwMTg2N2VjY2EiLCJpYXQiOjE3MDQ5ODEyNjAsImV4cCI6MTcwNjE5MDg2MH0.xjWm3JkW2AzYIzMeJFAxdtwNSKIOPmrQeTF-TdPj19A', // Sostituisci con il tuo token
+            'Content-type': 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTc4MTkyZmMwNTgzNTAwMTg1MjJjOTYiLCJpYXQiOjE3MDU0OTc1OTYsImV4cCI6MTcwNjcwNzE5Nn0.KC5dTW_sjUK1vaUno2DwGXFRC8nWYcPxBg3L8hzeuWE',
           },
-          body: JSON.stringify(commentData),
         }
-      );
-
+      )
       if (response.ok) {
-        // Aggiorna lo stato o esegui altre azioni necessarie dopo l'aggiunta del commento
-        setNewComment('');
-        setNewRate('');
+        alert('Comment was sent!')
+        setComment({
+          comment: '',
+          rate: 1,
+          elementId: null,
+        })
       } else {
-        console.error('Errore nell\'aggiunta del commento:', response.statusText);
+        console.log('error')
+        alert('something went wrong')
       }
     } catch (error) {
-      console.error('Errore nella richiesta POST:', error);
+      console.log('error')
     }
-  };
+  }
 
   return (
     <div>
-      <h2>Aggiungi una recensione:</h2>
-      <textarea
-        value={newComment}
-        onChange={(e) => setNewComment(e.target.value)}
-        placeholder="Inserisci il tuo commento"
-      />
-      <input
-        type="number"
-        value={newRate}
-        onChange={(e) => setNewRate(e.target.value)}
-        placeholder="Valutazione (da 1 a 5)"
-      />
-      <button onClick={handleAddComment}>Aggiungi recensione</button>
+      <Form onSubmit={sendComment}>
+        <Form.Group>
+          <Form.Label>Comment text</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Add comment here"
+            value={comment.comment}
+            onChange={(e) =>
+              setComment({
+                ...comment,
+                comment: e.target.value,
+              })
+            }
+          />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Rating</Form.Label>
+          <Form.Control
+            as="select"
+            value={comment.rate}
+            onChange={(e) =>
+              setComment({
+                ...comment,
+                rate: e.target.value,
+              })
+            }
+          >
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </Form.Control>
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     </div>
-  );
-};
+  )
+}
 
-export default AddComment;
+export default AddComment
