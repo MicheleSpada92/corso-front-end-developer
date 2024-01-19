@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Job from "./Job";
 import { useParams } from "react-router-dom";
-import { connect } from "react-redux";
-import { setCompanyJobs } from "../store/actions";
 
-const CompanySearchResults = ({ companyJobs, setCompanyJobs }) => {
-  const [jobs, setJobs] = useState(companyJobs);
+const CompanySearchResults = () => {
+  const [jobs, setJobs] = useState([]);
   const params = useParams();
 
   const baseEndpoint = "https://strive-benchmark.herokuapp.com/api/jobs?company=";
@@ -14,7 +12,7 @@ const CompanySearchResults = ({ companyJobs, setCompanyJobs }) => {
   useEffect(() => {
     getJobs();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [params.company]); // Aggiungi params.company come dipendenza dell'effetto
+  }, []);
 
   const getJobs = async () => {
     try {
@@ -22,8 +20,6 @@ const CompanySearchResults = ({ companyJobs, setCompanyJobs }) => {
       if (response.ok) {
         const { data } = await response.json();
         setJobs(data);
-        // Aggiorna lo stato Redux utilizzando l'azione setCompanyJobs
-        setCompanyJobs(data);
       } else {
         alert("Error fetching results");
       }
@@ -37,7 +33,7 @@ const CompanySearchResults = ({ companyJobs, setCompanyJobs }) => {
       <Row>
         <Col className="my-3">
           <h1 className="display-4">Job posting for: {params.company}</h1>
-          {jobs.map((jobData) => (
+          {jobs.map(jobData => (
             <Job key={jobData._id} data={jobData} />
           ))}
         </Col>
@@ -46,12 +42,4 @@ const CompanySearchResults = ({ companyJobs, setCompanyJobs }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  companyJobs: state.companyJobs,
-});
-
-const mapDispatchToProps = {
-  setCompanyJobs,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(CompanySearchResults);
+export default CompanySearchResults;
