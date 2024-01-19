@@ -4,6 +4,7 @@ import sunnyBackground from './assets/sunny-background.jpg';
 import rainyBackground from './assets/rainy-background.jpg';
 import cloudyBackground from './assets/cloudy-background.jpg';
 import mistyBackground from './assets/misty-background.jpg';
+import snowyBackground from './assets/snowy-background.jpg';
 
 const WeatherBackground = ({ city, condition, temperature, coordinates, pressure, humidity, windSpeed }) => {
   let background;
@@ -20,6 +21,9 @@ const WeatherBackground = ({ city, condition, temperature, coordinates, pressure
       break;
       case 'Mist':
         background = `url(${mistyBackground})`;
+        break;
+        case 'Snow':
+        background = `url(${snowyBackground})`;
         break;
     default:
       background = `url(${sunnyBackground})`;
